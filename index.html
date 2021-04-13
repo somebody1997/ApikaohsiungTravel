@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高雄旅遊資訊網</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">高雄旅遊資訊網</h1>
+        <select name="Zone" class="drop-down" id="drop-down"></select>
+    </header>
+
+    <nav class="hotZone">
+        <h2 class="h3 hotZone-title">熱門行政區</h2>
+        <ul class="hotZone-list">
+            <li><button value="苓雅區" class="h4" style="background-color: #559ac8;">苓雅區</button></li>
+            <li><button value="三民區" class="h4" style="background-color: #FFA782;">三民區</button></li>
+            <li><button value="岡山區" class="h4" style="background-color: #F5D105;">岡山區</button></li>
+            <li><button value="大樹區" class="h4" style="background-color: #3fc296;">大樹區</button></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h2 class="zone-title">全部行政區</h2>
+        <ul class="card-list"></ul>
+        <ul class="pagination" id="pageid"></ul>
+    </main>
+
+    <footer class="footer">
+        <p class="h4">高雄旅遊網</p>
+        <small>
+            資料來源：<a href="https://api.kcg.gov.tw/" target="_blank">高雄市政府</a>
+        </small>
+    </footer>
+
+    <a href="#" id="go-top"><img src="image/btn_goTop.png" alt="goTop"></a>
+    <script src="js/all.js"></script>
+</body>
+</html>

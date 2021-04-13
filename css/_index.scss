@@ -1,0 +1,296 @@
+.header{
+    height: 400px;
+    background: url('../image/banner.png') no-repeat center/ cover;
+    text-align: center;
+    color: $primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px $dark;
+    margin-bottom: 80px;
+}
+
+.drop-down{
+    min-width: 450px;
+    padding: 12px 10px;
+    font-size: 1rem;
+    border-width: 700;
+    border-radius: 5px;
+    border: 3px solid $white;
+    appearance: none;
+    background: url('../image/icons_down.png') rgba(255, 255, 255, .7) no-repeat 97% center;
+    &:focus {
+        outline: none;
+    }
+}
+
+.hotZone{
+    max-width: 800px;
+    padding: 25px;
+    margin: 0 auto 40px;
+    border-radius: 6px;
+    background-color: $white;
+    box-shadow: 0 0 5px $light;
+    transform: translateY(-36px);
+}
+.hotZone-list{
+    display: flex;
+    flex-wrap: wrap;
+    button{
+        color: $white;
+        font-weight: 700;
+        padding: 10px 30px;
+        margin-right: 20px;
+        border-radius: 5px;
+        transition: .2s;
+        &:hover{
+            box-shadow: 0 0 8px $light;
+        }
+    }
+}
+
+.content{
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 96px 30px;
+    border-top:3px dashed $primary;
+    &:before,
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        transform:translateY(-50%);
+        margin: auto;
+    } 
+    &:before{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $lighter;
+        border: 3px solid $primary;
+       // outline: 7px solid $lighter; 
+    }
+    &:after{
+        width: 0px;
+        border-top: 9px solid $primary;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent; 
+    }
+}
+
+.zone-title {
+    color: #8A82CC;
+    text-align: center;
+}
+
+.card-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.card-item{
+    width: 48%;
+    margin-bottom: 36px;
+    background-color: $white;
+    box-shadow: 0 0 5px $light;
+}
+
+.card-header,
+.card-body{
+    padding: 16px 24px;
+}
+
+.card-header{
+    height: 180px;
+    color: $white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background: transparent no-repeat center/105%;
+    transition: all 1s;
+    position: relative;
+    h4,p{
+        z-index: 10;
+        font-weight: 500;
+        transition: 1s;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.45);
+        transition: 1s;
+        opacity: 1;
+    }
+    &:hover{
+        background-size: 135%;
+    }
+    &:hover h4,
+    &:hover p{
+        text-shadow: 0 0 6px  #000;
+    }
+    &:hover::after{
+        opacity: 0;
+    }
+}
+.card-body{
+    img{
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        margin-right: 8px;
+    }
+    li{
+        display: flex;
+        margin-bottom: 1rem;
+        &:not(:first-child){
+            align-items: center;
+        }
+    }
+    li:last-of-type{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+    div{
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .ticket-info{
+        justify-content: flex-end;
+    }
+    a:hover{
+        color:$primary;
+    }
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    .link{
+        padding: 15px 20px;
+        margin: 0 2px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    a.link:hover{
+        color:$primary;
+        background-color: transparent;
+        position: relative;
+    }
+    a.link.active{
+        color: $primary;
+        background-color: transparent;
+        position: relative;
+    }
+}
+
+.footer{
+    padding: 32px 0;
+    text-align: center;
+    color:$white;
+    background-color: $primary;
+    p{
+        margin-bottom: 8px;
+        letter-spacing: 1.2px;
+    }
+    small{
+        color: $highlight;
+    }
+    a{
+        color:$highlight;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            bottom: -5px;
+            border-bottom: 1px dashed $highlight;
+            transition: .4s;
+        }
+        &:hover{
+            color: rgba( $highlight,.8);
+        }
+        &:hover::after{
+            color:rgba($highlight,.8);
+        }
+        &:hover::after{
+            left: 0;
+            right: 0;
+            border-color: rgba($highlight, .7);
+        }
+    }
+}
+
+#go-top{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+    &:hover{
+        animation: gogo .7s infinite linear;
+    }
+}
+
+@keyframes gogo{
+    0%{
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }   
+}
+
+@include mobile{
+    h1{
+        font-size: 2rem;
+    }
+    #drop-down{
+        min-width: 300px;
+    }
+    .hotZone-title{
+        font-size: 1.25rem;
+    }
+    .hotZone-list{
+        justify-content: space-between;
+        li{
+            width: 48%;
+            margin-bottom: 16px;
+        }
+        button{
+            font-size: 1rem;
+            width: 100%;
+        }
+    }
+    .zone-title{
+        font-size: 1.75rem;
+    }
+    .card-list{
+        justify-content: center;
+    }
+    .card-item{
+        width: 90%;
+    }
+    #go-top{
+        right: 10px;
+        bottom: 20px;
+    }
+}

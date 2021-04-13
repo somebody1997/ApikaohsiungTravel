@@ -1,0 +1,11 @@
+$primary: #559AC8;
+$highlight: #FFD366;
+$dark: #2c2c2c;
+$light: #aaa;
+$lighter: #f7f7f7;
+$white: #fff;
+@mixin mobile {
+    @media(max-width: 768px) {
+        @content;
+    }
+}
